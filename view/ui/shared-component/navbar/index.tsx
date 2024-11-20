@@ -16,14 +16,14 @@ const Navbar = () => {
     <div className={`mobile-custom-nav hover:bg-black fixed top-0 z-[101] w-full px-0 md:px-4 py-0 md:py-4 duration-700 ease-in-out`}>
       <div>
         <div className='custom-nav px-0 md:px-0 py-2 md:py-0 mx-auto flex  flex-row justify-between gap-20 md:justify-between '>
-          <div className='flex items-center gap-5'>
+          <div className='px-5 flex items-center gap-5'>
 
           <Link
             href={navbarData?.companyName?.link}
             aria-label='Company'
             className='inline-flex items-center'
           >
-            <Image src={'/logo/logo.svg'} className='w-20 text-white' alt='bus' width={1000} height={1000} priority /> <span className='text-white pt-1 font-bold text-[25px] '></span>
+            <Image src={'/logo/logo.svg'} className='w-32 pr-4 text-white' alt='bus' width={1000} height={1000} priority /> <span className='text-white pt-1 font-bold text-[25px] '></span>
           </Link>
           <ul className='hidden items-center space-x-8 lg:flex'>
             {navbarData.navbarList.map((item: any, index: number) => (

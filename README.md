@@ -26,7 +26,7 @@ Provide step-by-step instructions on how to install and set up your application 
 
 1. Clone the repository:
 
-```git clone https://github.com/.```
+```git clone https://github.com/ahmadullahchowdhury/test-xponent.git ```
 
 1. Install the dependencies:
 
