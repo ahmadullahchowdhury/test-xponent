@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
+}
+
+
+@layer utilities {
+  /*
+    Chromium browsers don't render nested backdrop filters.
+    As a workaround, add 'before:' to the outer filter, along with 'before:backdrop-hack':
+
+      <div class="before:backdrop-blur-md before:backdrop-hack>
+        <div class="backdrop-blur-md"></div>
+      </div>
+
+    See https://stackoverflow.com/a/76207141.
+  */
+  .backdrop-hack {
+    @apply absolute inset-0 -z-10;
+  }
+}
+
+ul {
+  list-style: none;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  scroll-behavior: smooth !important;
+}
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+:root {
+  scroll-behavior: smooth !important;
+  --foreground-rgb: #fff;
+  --background-start-rgb: #ddd;
+  --background-end-rgb: #ddd;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  margin: 0;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  .container-custom {
+    @apply mx-auto w-full max-w-[1280px] overflow-hidden px-5 md:px-8;
+  }
+}
+
+
+.custom-nav {
+  padding-right: 20px !important;
+  position: relative;
+}
+
+/* .custom-nav::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+
+  border-radius: 36px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%);
+  backdrop-filter: blur(9px);
+  z-index: -1;
+} */
+
+.navbar-bg-color {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%) !important;
+  backdrop-filter: blur(9px) !important;
+}
+/* .glassmorphism {
+  position: relative;
+} */
+
+.glassmorphism {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%) !important;
+  /* border-radius: 16px; */
+  box-shadow: 0 40px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  -moz-backdrop-filter: blur(20px) !important;
+}
+
+@media (max-width: 767px) {
+  /* .mobile-custom-nav{
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%) !important;
+    background: rgba(255, 255, 255, 0.01) ;
+  }
+  .mobile-custom-nav::before{
+    backdrop-filter: blur(9px) !important;
+  }
+  .navbar-bg-color {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%) !important;
+  }
+  .custom-nav::before {
+    background: none;
+    backdrop-filter: none !important;
+  } */
+  
+  .custom-nav::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    top: 0%;
+    left: 0%;
+    border-radius: 0px;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.29) 3.5%, rgba(0, 0, 0, 0.29) 100%);
+    backdrop-filter: blur(9px);
+    z-index: -1;
+  }
+
+}
+
+
